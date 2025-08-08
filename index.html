@@ -112,5 +112,19 @@
         document.body.classList.add("fade-in");
       });
     </script>
+
+    <audio id="click-sound" src="click.wav" preload="auto"></audio>
+
+    <script>
+      const clickSound = document.getElementById("click-sound");
+
+      // Play sound on any link or button click
+      document.querySelectorAll("a, button").forEach((el) => {
+        el.addEventListener("click", () => {
+          clickSound.currentTime = 0;
+          clickSound.play();
+        });
+      });
+    </script>
   </body>
 </html>
