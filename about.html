@@ -35,13 +35,57 @@
         </p>
 
         <div class="links">
-          <a href="index.html">← Back to Home</a>
+          <a href="index.html" class="back-button">← Back to Home</a>
         </div>
       </div>
     </div>
     <script>
       window.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add("fade-in");
+      });
+    </script>
+
+    <audio id="click-sound" src="click.wav" preload="auto"></audio>
+
+    <script>
+      // Play click sound if sessionStorage flag is set
+      const shouldPlay = sessionStorage.getItem("playClickSound");
+      const clickSound = document.getElementById("click-sound");
+
+      if (shouldPlay === "true") {
+        clickSound.currentTime = 0;
+        clickSound.play();
+        sessionStorage.removeItem("playClickSound"); // Reset it
+      }
+    </script>
+
+    <audio id="click-sound" src="/click.wav" preload="auto"></audio>
+
+    <script>
+      const clickSound = document.getElementById("click-sound");
+
+      document.querySelectorAll("a").forEach((link) => {
+        const href = link.getAttribute("href");
+
+        // Only delay for internal links like 'index.html'
+        if (href && href.endsWith(".html")) {
+          link.addEventListener("click", function (e) {
+            e.preventDefault(); // Stop immediate navigation
+            clickSound.currentTime = 0;
+            clickSound.play();
+
+            // Delay navigation to let sound play
+            setTimeout(() => {
+              window.location.href = href;
+            }, 250); // You can increase to 300ms if sound is short
+          });
+        } else {
+          // External links: play sound immediately, no delay
+          link.addEventListener("click", () => {
+            clickSound.currentTime = 0;
+            clickSound.play();
+          });
+        }
       });
     </script>
   </body>

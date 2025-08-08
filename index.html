@@ -118,12 +118,21 @@
     <script>
       const clickSound = document.getElementById("click-sound");
 
-      // Play sound on any link or button click
-      document.querySelectorAll("a, button").forEach((el) => {
-        el.addEventListener("click", () => {
-          clickSound.currentTime = 0;
-          clickSound.play();
-        });
+      document.querySelectorAll("a").forEach((link) => {
+        const href = link.getAttribute("href");
+
+        if (href && href.endsWith(".html")) {
+          link.addEventListener("click", function (e) {
+            // Set flag in sessionStorage
+            sessionStorage.setItem("playClickSound", "true");
+          });
+        } else {
+          // External links — play sound immediately
+          link.addEventListener("click", () => {
+            clickSound.currentTime = 0;
+            clickSound.play();
+          });
+        }
       });
     </script>
   </body>
