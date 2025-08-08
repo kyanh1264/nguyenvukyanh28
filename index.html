@@ -113,27 +113,47 @@
       });
     </script>
 
-    <audio id="click-sound" src="click.wav" preload="auto"></audio>
+    <audio id="click-sound" src="click.WAV" preload="auto"></audio>
+
+    <audio id="hover-sound" src="hover.WAV" preload="auto"></audio>
 
     <script>
       const clickSound = document.getElementById("click-sound");
+      const hoverSound = document.getElementById("hover-sound");
 
+      // Play on hover
       document.querySelectorAll("a").forEach((link) => {
-        const href = link.getAttribute("href");
+        link.addEventListener("mouseenter", () => {
+          hoverSound.currentTime = 0;
+          hoverSound.play();
+        });
 
+        const href = link.getAttribute("href");
         if (href && href.endsWith(".html")) {
           link.addEventListener("click", function (e) {
-            // Set flag in sessionStorage
-            sessionStorage.setItem("playClickSound", "true");
+            e.preventDefault();
+            clickSound.currentTime = 0;
+            clickSound.play();
+
+            setTimeout(() => {
+              window.location.href = href;
+            }, 250);
           });
         } else {
-          // External links — play sound immediately
           link.addEventListener("click", () => {
             clickSound.currentTime = 0;
             clickSound.play();
           });
         }
       });
+
+      // On page load click sound
+      const shouldPlay = sessionStorage.getItem("playClickSound");
+      if (shouldPlay === "true") {
+        clickSound.currentTime = 0;
+        clickSound.play();
+        sessionStorage.removeItem("playClickSound");
+      }
     </script>
   </body>
 </html>
