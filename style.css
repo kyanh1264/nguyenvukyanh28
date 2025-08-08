@@ -1,3 +1,7 @@
+* {
+  transition: all 0.3s ease;
+}
+
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
@@ -31,11 +35,23 @@ body.fade-in {
   object-fit: cover;
   margin-bottom: 1rem;
   border: 3px solid #fff;
+  transition: transform 0.4s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 h1 {
   margin: 0.5rem 0;
   font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+h1:hover {
+  color: #0ff;
+  transform: scale(1.05);
 }
 
 p {
@@ -55,10 +71,14 @@ p {
   border-radius: 8px;
   transition: background 0.3s;
   margin-right: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .links a:hover {
-  background: #555;
+  background: #fff;
+  color: #111;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
 }
 
 .bottom-box {
