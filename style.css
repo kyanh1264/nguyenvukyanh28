@@ -60,6 +60,21 @@ p {
   color: #ffffff;
 }
 
+.link {
+  display: block;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem;
+  margin: 0.5rem auto;
+  width: 220px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .links a {
   display: block;
   background: #333;
@@ -191,11 +206,11 @@ p {
     #ffdc80
   );
   background-size: 300% 300%;
+  color: white;
 }
 
 .instagram:hover {
   animation: instagramPulse 3s ease infinite;
-  color: white;
 }
 
 @keyframes instagramPulse {
