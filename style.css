@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("alt1.png") no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #fff;
+}
+
+h1 {
+  margin: 0.5rem 0;
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.links a {
+  display: block;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem;
+  margin: 0.5rem auto;
+  width: 220px;
+  border-radius: 8px;
+  transition: background 0.3s;
+  margin-right: 0.5rem;
+}
+
+.links a:hover {
+  background: #555;
+}
+
+.bottom-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.link-box {
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* General styling for the About card */
+.card {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Make sure text inside the card is readable */
+.card h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Optional: link style inside about page */
+.card .links a {
+  display: inline-block;
+  background: #444;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.card .links a:hover {
+  background: #666;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  opacity: 0.4; /* You can increase/decrease transparency */
+}
+
+/* Make sure the content appears above the video */
+.container {
+  position: relative;
+  z-index: 1;
+}
