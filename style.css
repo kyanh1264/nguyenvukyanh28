@@ -60,21 +60,6 @@ p {
   color: #ffffff;
 }
 
-.link {
-  display: block;
-  background: #333;
-  color: white;
-  text-decoration: none;
-  padding: 0.75rem;
-  margin: 0.5rem auto;
-  width: 220px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  font-weight: bold;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
 .links a {
   display: block;
   background: #333;
@@ -87,7 +72,6 @@ p {
   transition: background 0.3s;
   margin-right: 0.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
 }
 
 .links a:hover {
@@ -173,66 +157,11 @@ p {
   min-height: 100%;
   z-index: -1;
   object-fit: cover;
-  opacity: 0.4;
+  opacity: 0.4; /* You can increase/decrease transparency */
 }
 
+/* Make sure the content appears above the video */
 .container {
   position: relative;
   z-index: 1;
-}
-
-.youtube:hover {
-  background: #ff0000;
-  color: #fff;
-}
-
-.spotify:hover {
-  background: #1db954;
-  color: #fff;
-}
-
-.instagram {
-  background: linear-gradient(
-    45deg,
-    #405de6,
-    #5851db,
-    #833ab4,
-    #c13584,
-    #e1306c,
-    #fd1d1d,
-    #f56040,
-    #f77737,
-    #fcaf45,
-    #ffdc80
-  );
-  background-size: 300% 300%;
-  color: white;
-}
-
-.instagram:hover {
-  animation: instagramPulse 3s ease infinite;
-}
-
-@keyframes instagramPulse {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Email - Blue */
-.email:hover {
-  background: #1e90ff;
-  color: #fff;
-}
-
-/* About Me - White */
-.about:hover {
-  background: #fff;
-  color: #111;
 }
